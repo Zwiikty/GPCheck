@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="style-home.css" rel="stylesheet">
+    <link href="home-style.css" rel="stylesheet">
     <link href="card-style.css" rel="stylesheet">
 </head>
 <body>
@@ -26,7 +26,7 @@
         <h2>01</h2>
         <h3>ปวช.1</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p>
-        <a href="#">Read More</a>
+        <a href="testcard.php">Read More</a>
         
       </div>
     </div>
