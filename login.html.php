@@ -1,5 +1,5 @@
 <?php 
-	require_once("login.inc.php");
+	require_once("function.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

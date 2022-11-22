@@ -1,5 +1,6 @@
 <?php 
     require_once("conn.inc.php");
+//login
 function f_alert($msg) 
     {
         echo "<script type='text/javascript'>alert('$msg');</script>";
@@ -15,9 +16,16 @@ if (isset($_POST['login'])) {
         if (!empty($row['user_id'])) {
             $_SESSION['ID'] = $row['user_id'];
             $_SESSION['NAME'] = $row['user_name'];
-            header('location:home.html');
+            header('location:home.html.php');
         }else {
             f_alert("ชื่อผู้ใช้/รหัสผิดพลาด");
         }
 }
+//login
+
+//create room
+//create room
+
+
+
 ?>
