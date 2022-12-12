@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2022 at 03:15 PM
+-- Generation Time: Dec 12, 2022 at 05:17 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -37,6 +37,16 @@ CREATE TABLE `room` (
   `r_teacher` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `room`
+--
+
+INSERT INTO `room` (`r_id`, `r_code`, `r_name`, `r_time`, `r_latitude`, `r_longitude`, `r_teacher`) VALUES
+(29, 'boUBMZ', '12', '2022-12-12 16:13:00', '', '', 'Teacher1'),
+(30, 'qzOUVo', '22', '2022-12-13 16:13:00', '', '', 'Teacher1'),
+(31, 'imxot3', 'admin', '2022-12-12 20:26:00', '', '', 'Admin '),
+(32, '4K1Arq', 'sadsad', '2022-12-12 22:22:00', '', '', 'Teacher1');
+
 -- --------------------------------------------------------
 
 --
@@ -61,7 +71,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_username`, `user_password`, `user_name`, `user_status`, `user_r_code`, `user_latitude`, `user_longitude`, `user_time`, `user_checkstatus`) VALUES
-(1, 'admin', 'admin123', 'Admin ', 0, '', 0, 0, '2022-11-21 00:00:00', 0);
+(1, 'admin', 'admin123', 'Admin ', 0, '', 0, 0, '2022-11-21 00:00:00', 0),
+(2, '64309010030', '13/09/2545', 'Pisit Audjai', 1, 'qzOUVo', 0, 0, '2022-12-08 07:19:51', 1),
+(4, 'teacher', 'teacher123', 'Teacher1', 2, '', 0, 0, '2022-12-08 07:21:39', 0);
 
 --
 -- Indexes for dumped tables
@@ -87,13 +99,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
