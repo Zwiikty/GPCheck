@@ -1,15 +1,17 @@
 <?php 
  require_once("function.php");
  //geolocation
-
  //code generate
  function room_code($chars) 
 {
   $letter = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
   return substr(str_shuffle($letter), 0, $chars);
 }
-$roomcode = room_code(6);
+$f_roomcode = room_code(6);
+$roomcode = $f_roomcode;
+$_SESSION['r_code'] = $roomcode;
 //code generate
+
 
  if (isset($_POST['roomsubmit'])){
     $username = $_SESSION['NAME'];
@@ -30,7 +32,7 @@ $roomcode = room_code(6);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="home-index-style.css" rel="stylesheet">
-    <link href="style-create room.css" rel="stylesheet">
+    <link href="style-create-room.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -44,7 +46,7 @@ $roomcode = room_code(6);
           <div class="face face2">
               <div class="content">
               <p>
-    <button class="button" data-modal="modalOne">Create Room</button>
+    <button class="button" data-modal="modalOne">Click here to create room!</button>
   </p>
               </div>
           </div>
@@ -54,9 +56,8 @@ $roomcode = room_code(6);
       <div class="contact-form">
         <a class="close">&times;</a>
         <form method="POST">
-          <h2>Create Room</h2>
+          <h2>Create room : </h2>
           <div>
-            <?php echo "room_code : ".$roomcode?>
             <input class="fname" type="text" name="r_name" placeholder="ชื่อห้อง" />
             <input type="datetime-local" name="datetime" placeholder="วันที่/เวลา" />
           </div>
@@ -83,38 +84,19 @@ $roomcode = room_code(6);
           <div class="face face1">
               <div class="content">
               <center><img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/code_128.png?raw=true"></center>
-                  <h3>check name</h3>
+                  <h3>Room List</h3>
               </div>
           </div>
           <div class="face face2">
               <div class="content">
               <p>
-    <button class="button" data-modal="modalTwo">check name</button>
+                <a href="room-list.php">
+    <button class="button" data-modal="modalTwo" >Click here !</button></a>
   </p>
               </div>
           </div>
       </div>
-      <div id="modalTwo" class="modal">
-    <div class="modal-content">
-      <div class="contact-form">
-        <span class="close">&times;</span>
-        <form action="/">
-          <h2>check name</h2>
-          <div>
-            <input class="fname" type="text" name="name" placeholder="Full name" />
-            <input type="text" name="name" placeholder="Email" />
-            <input type="text" name="name" placeholder="Phone number" />
-            <input type="text" name="name" placeholder="Website" />
-          </div>
-          <span>Message</span>
-          <div>
-            <textarea rows="4"></textarea>
-          </div>
-          <button type="submit" href="/">Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
+      
       <!-- card3 -->
       <div class="card">
           <div class="face face1">

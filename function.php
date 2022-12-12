@@ -16,16 +16,16 @@ if (isset($_POST['login'])) {
         if (!empty($row['user_id'])) {
             $_SESSION['ID'] = $row['user_id'];
             $_SESSION['NAME'] = $row['user_name'];
-            header('location:home.html.php');
+            if($row['user_status'] == 0 or $row['user_status'] == 2) {
+                header('location:home.html.php');
+            } elseif ($row['user_status'] == 1) {
+                header('location:student-home.php');
+            }
         }else {
             f_alert("ชื่อผู้ใช้/รหัสผิดพลาด");
         }
 }
 //login
-
-//create room
-//create room
-
 
 
 ?>

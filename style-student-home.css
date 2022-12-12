@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    background: #001a25;
+    height: 100vh;
+    width: 100%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    color: #434343;
+    font-size: 16px;
+  }
+  
+  main.card{
+    display: flex;
+    padding: 32px;
+  }
+  
+  main.card section.card
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    max-height: 468;
+    margin-left: 32px;
+  }
+  
+  main.card section.card:first-child
+  {
+    margin-left: 0;
+  }
+  
+  main.card section.card h3
+  {
+    font-size: 100%;
+    margin: 16px 0;
+  }
+  
+  main.card section.card span
+  {
+    font-weight: 300;
+    max-width: 240px;
+    font-size: 80%;
+    margin-bottom: 16px;
+  }
+  
+  main.card section.card button
+  {
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    border-radius: 32px;
+    border: 0;
+    cursor: pointer;
+    font-size: 80%;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 16px;
+  }
+  
+  main.card section.card.กลุ่ม1 button
+  {
+    background: linear-gradient(to right, #9F66FF, #DFCBFF);
+  }
+  
+  main.card section.card.กลุ่ม2 button 
+  {
+    background: linear-gradient(to right, #3E8AFF, #BBDEFF);
+  }
+  
+  main.card section.card.กลุ่ม3 button 
+  {
+    background: linear-gradient(to right, #FE5F8F, #FFC7D9);
+  }
+  
+  main.card section.card.กลุ่ม1 
+  {
+    box-shadow: 20px 20px 50px -30px #dbc4ff;
+  }
+  
+  main.card section.card.กลุ่ม2 
+  {
+    box-shadow: 20px 20px 50px -30px #afd6ff;
+  }
+  
+  main.card section.card.กลุ่ม3 
+  {
+    box-shadow: 20px 20px 50px -30px #ffc1d5;
+  }
+  
+  /*@media screen and (max-width: 720px) 
+  
+  {
+    main.card {
+        flex-direction: column;
+    }
+  
+    main.card section.card 
+    {
+        margin-left: 0;
+        margin-bottom: 32px;
+    }
+  
+    main.card section.card:last-child 
+    {
+        margin-bottom: 0;
+    }
+  
+    main.card section.card button 
+    {
+        font-size: 70%;
+    }
+  
+  }
+  */
