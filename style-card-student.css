@@ -1,11 +1,13 @@
-* {
+* 
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
-body {
+body 
+{
   background: #001a25;
   height: 100vh;
   width: 100%;
@@ -16,8 +18,8 @@ body {
 
   color: #434343;
   font-size: 16px;
-}
 
+}
 main.card{
   display: flex;
   padding: 32px;
@@ -83,6 +85,16 @@ main.card section.card.กลุ่ม3 button
   background: linear-gradient(to right, #FE5F8F, #FFC7D9);
 }
 
+main.card section.card.กลุ่ม4 button 
+{
+  background: linear-gradient(to right, #2ebc59, #8ccca5fa);
+}
+
+main.card section.card.กลุ่ม5 button 
+{
+  background: linear-gradient(to right, #c9d06d, #d5d7b7);
+}
+
 main.card section.card.กลุ่ม1 
 {
   box-shadow: 20px 20px 50px -30px #dbc4ff;
@@ -98,28 +110,28 @@ main.card section.card.กลุ่ม3
   box-shadow: 20px 20px 50px -30px #ffc1d5;
 }
 
-/*@media screen and (max-width: 720px) 
-
+main.card section.card.กลุ่ม4 
 {
-  main.card {
-      flex-direction: column;
-  }
-
-  main.card section.card 
-  {
-      margin-left: 0;
-      margin-bottom: 32px;
-  }
-
-  main.card section.card:last-child 
-  {
-      margin-bottom: 0;
-  }
-
-  main.card section.card button 
-  {
-      font-size: 70%;
-  }
-
+  box-shadow: 20px 20px 50px -30px #2ebc59;
 }
-*/
+
+main.card section.card.กลุ่ม5 
+{
+  box-shadow: 20px 20px 50px -30px #c9d06d;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 50px;
+    grid-row-gap: 10px;
+    background-color: #001a25;
+    padding: 10px;
+  }
+
+  .grid-container > div {
+    /*background-color: rgba(255, 255, 255, 0.8);*/
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
