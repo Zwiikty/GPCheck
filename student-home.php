@@ -3,7 +3,8 @@
  if (isset($_GET['check'])) {
     $username = $_SESSION['NAME'];
     $r_code = $_GET['check'];
-    $sql1 = "update user set user_r_code = '$r_code' , user_checkstatus = '1' where user_name = '$username'";
+    $getdate = $_GET['time'];
+    $sql1 = "update user set user_r_code = '$r_code' , user_checkstatus = '1' , user_time = '$getdate' where user_name = '$username'";
     mysqli_query($conn, $sql1) or die (mysqli_error($conn));
 }
 ?>
@@ -51,7 +52,9 @@
   </script>
 
 <!-- Display-->
-<?php 
+<?php
+$currentDate = new DateTime();
+$currentDate->setTimezone(new DateTimeZone('Asia/Bangkok')); 
 $sql = "select * from room";
 $result = mysqli_query($conn, $sql) or die (mysqli_error($conn));
     while ($row = mysqli_fetch_array($result)) :
@@ -61,7 +64,7 @@ $result = mysqli_query($conn, $sql) or die (mysqli_error($conn));
     <section class="card กลุ่ม1">
 <h3><?php echo $row['r_name'] ?></h3>
     <span>อาจารย์ <?php echo $row['r_teacher'] ?></span>
-    <a href="student-home.php?check=<?php echo $row['r_code'];?>">
+    <a href="student-home.php?check=<?php echo $row['r_code'];?>&time=<?php echo $currentDate->format('Y/m/d H:i:s')?>">
     <button type="submit">เช็คชื่อ</button></a>
 </section>
 </div>
