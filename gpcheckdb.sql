@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2022 at 05:17 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.9
+-- Generation Time: Dec 14, 2022 at 05:26 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,7 +45,9 @@ INSERT INTO `room` (`r_id`, `r_code`, `r_name`, `r_time`, `r_latitude`, `r_longi
 (29, 'boUBMZ', '12', '2022-12-12 16:13:00', '', '', 'Teacher1'),
 (30, 'qzOUVo', '22', '2022-12-13 16:13:00', '', '', 'Teacher1'),
 (31, 'imxot3', 'admin', '2022-12-12 20:26:00', '', '', 'Admin '),
-(32, '4K1Arq', 'sadsad', '2022-12-12 22:22:00', '', '', 'Teacher1');
+(32, '4K1Arq', 'sadsad', '2022-12-12 22:22:00', '', '', 'Teacher1'),
+(33, 'Qrkn0O', 'ssdaasad', '2022-12-14 08:58:00', '', '', 'Teacher1'),
+(34, 'zObr5Z', '14/12/2022', '2022-12-14 10:21:00', '', '', 'Teacher1');
 
 -- --------------------------------------------------------
 
@@ -72,8 +74,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `user_username`, `user_password`, `user_name`, `user_status`, `user_r_code`, `user_latitude`, `user_longitude`, `user_time`, `user_checkstatus`) VALUES
 (1, 'admin', 'admin123', 'Admin ', 0, '', 0, 0, '2022-11-21 00:00:00', 0),
-(2, '64309010030', '13/09/2545', 'Pisit Audjai', 1, 'qzOUVo', 0, 0, '2022-12-08 07:19:51', 1),
-(4, 'teacher', 'teacher123', 'Teacher1', 2, '', 0, 0, '2022-12-08 07:21:39', 0);
+(2, '64309010030', '13/09/2545', 'Pisit Audjai', 1, 'imxot3', 0, 0, '2022-12-14 11:05:02', 1),
+(4, 'teacher', 'teacher123', 'Teacher1', 2, '', 0, 0, '2022-12-08 07:21:39', 0),
+(11, '64309010034', '123456', 'Wx', 1, 'boUBMZ', 0, 0, '2022-12-14 04:31:25', 1);
 
 --
 -- Indexes for dumped tables
@@ -99,13 +102,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
