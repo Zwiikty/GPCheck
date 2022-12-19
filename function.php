@@ -1,5 +1,5 @@
 <?php 
-    require_once("conn.inc.php");
+    require_once("conn.php");
 //login
 function f_alert($msg) 
     {
@@ -16,8 +16,8 @@ if (isset($_POST['login'])) {
         if (!empty($row['user_id'])) {
             $_SESSION['ID'] = $row['user_id'];
             $_SESSION['NAME'] = $row['user_name'];
-            if($row['user_status'] == 0 or $row['user_status'] == 2) {
-                header('location:home.html.php');
+            if ($row['user_status'] == 0 || $row['user_status'] == 2) {
+                header('location:teacher-home.php');
             } elseif ($row['user_status'] == 1) {
                 header('location:student-home.php');
             }
