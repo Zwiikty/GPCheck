@@ -17,30 +17,21 @@
 <form method="post">
     <div class="row">
         <div class="col-sm-6">
+            <input type="hidden" name="id" value="<?php echo $row['user_id'];?>">
             <label for="username">username</label>
-            <input type="text" name="username" class="form-control" value="<?php echo $row['user_username']?>">
+            <input type="text" name="username" class="form-control" value="<?php echo $row['user_username'];?>">
             <label for="password">password</label>
-            <input type="text" name="password" class="form-control" value="<?php echo $row['user_password']?>">
+            <input type="text" name="password" class="form-control" value="<?php echo $row['user_password'];?>">
             <label for="username">fullname</label>
-            <input type="text" name="fullname" class="form-control" value="<?php echo $row['user_name']?>">
+            <input type="text" name="fullname" class="form-control" value="<?php echo $row['user_name'];?>">
             <label for="password">status</label>
             <select class="custom-select mr-sm-2" name="status">
                 <option selected>Choose..</option>
                 <option value="0">admin</option>
                 <option value="1">student</option>
                 <option value="2">teacher</option>
-            </select><br>
-            <label for="username">room code</label>
-            <input type="text" name="roomcode" class="form-control" value="<?php echo $row['user_r_code']?>">
-            <label for="username">latitude</label>
-            <input type="text" name="latitude" class="form-control" value="<?php echo $row['user_latitude']?>">
-            <label for="username">longitude</label>
-            <input type="text" name="longitude" class="form-control" value="<?php echo $row['user_longitude']?>">
-            <label for="username">time</label>
-            <input type="datetime-local" name="time" class="form-control" value="<?php echo $row['user_time']?>">
-            <label for="username">checkstatus</label>
-            <input type="text" name="checkstatus" class="form-control" value="<?php echo $row['user_checkstatus']?>">
-            <br><button type="submit" name="submit">submit</button>
+            </select><br><br>
+            <button type="bottom" name="update">submit</button>
         </div>
     </div>
 </form>
@@ -50,3 +41,17 @@
     endwhile;
     }
  ?>
+
+<?php 
+if (isset($_POST['update'])) {
+    $update_id = $_POST['id'];
+    $update_username = $_POST['username'];
+    $update_password = $_POST['password'];
+    $update_fullname = $_POST['fullname'];
+    $update_status = $_POST['status'];
+    $sql_update_user = "UPDATE user set user_username = '$update_username', user_password = '$update_password', user_name = '$update_fullname', user_status = '$update_status'
+    where user_id = '$update_id'";
+    mysqli_query($conn, $sql_update_user) or die(mysqli_error($conn));
+    header('location:admin-home.php?page=del_user');
+}
+?>

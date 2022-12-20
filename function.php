@@ -21,7 +21,7 @@ if (isset($_POST['login'])) {
             } elseif ($row['user_status'] == 1) {
                 header('location:student-home.php');
             } elseif ($row['user_status'] == 2) {
-                header('location:teacher_home.php');
+                header('location:teacher-home.php');
             }
         }else {
             f_alert("ชื่อผู้ใช้/รหัสผิดพลาด");
