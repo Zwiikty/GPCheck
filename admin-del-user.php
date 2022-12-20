@@ -1,8 +1,8 @@
 <?php 
     if (isset($_GET['del'])) {
     $del_user = $_GET['del'];
-    $sql_del_user = "DELETE FROM user WHERE user_id = '$del_user' ";
-    mysqli_query($conn, $sql_del_user) or die(mysqli_error($conn));
+    $sql1_del_user = "DELETE FROM user WHERE user_id = '$del_user' ";
+    mysqli_query($conn, $sql1_del_user) or die(mysqli_error($conn));
     header('location:admin-home.php?page=del_user');
     }
  $sql_del_user = "SELECT * from user";
