@@ -1,0 +1,38 @@
+*
+{
+	list-style: none;
+	text-decoration: none;
+	margin: 0 ;
+	padding: 0 ;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+body
+{
+	background: #f5f6fa;
+}
+
+.wrapper .sidebar
+{
+	background: rgb(238, 169, 144);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 225px;
+	height: 100%;
+	padding: 200px 0;
+	transition: all 0.5s ease;
+}
+
+.wrapper .sidebar .profile
+{
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.wrapper .sidebar .profile b
+{
+	color: #000000;
+	margin: 10px 0 5px;
+}
