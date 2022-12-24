@@ -1,10 +1,15 @@
 <?php 
  require_once("conn.php");
+ require_once("geolocation.html");
+
  if (isset($_GET['check'])) {
     $username = $_SESSION['NAME'];
     $r_code = $_GET['check'];
     $getdate = $_GET['time'];
-    $sql1 = "update user set user_r_code = '$r_code' , user_checkstatus = '1' , user_time = '$getdate' where user_name = '$username'";
+    $latitude = $_COOKIE['get_latitude'];
+    $longitude = $_COOKIE['get_longitude'];
+
+    $sql1 = "update user set user_r_code = '$r_code' , user_latitude = '$latitude' , user_longitude = '$longitude' , user_checkstatus = '1' , user_time = '$getdate' where user_name = '$username'";
     mysqli_query($conn, $sql1) or die (mysqli_error($conn));
 }
 ?>
@@ -65,7 +70,7 @@ $result = mysqli_query($conn, $sql) or die (mysqli_error($conn));
 <h3><?php echo $row['r_name'] ?></h3>
     <span>อาจารย์ <?php echo $row['r_teacher'] ?></span>
     <a href="student-home.php?check=<?php echo $row['r_code'];?>&time=<?php echo $currentDate->format('Y/m/d H:i:s')?>">
-    <button type="submit">เช็คชื่อ</button></a>
+    <button type="submit" onclick="getLocation()">เช็คชื่อ</button></a>
 </section>
 </div>
   </main>

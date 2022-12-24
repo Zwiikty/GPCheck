@@ -1,6 +1,6 @@
 <?php 
  require_once("function.php");
- //geolocation
+ require_once("geolocation.html");
  //code generate
  function room_code($chars) 
 {
@@ -9,16 +9,17 @@
 }
 $f_roomcode = room_code(6);
 $roomcode = $f_roomcode;
-$_SESSION['r_code'] = $roomcode;
 //code generate
 
 
- if (isset($_POST['roomsubmit'])){
+ if (isset($_POST['roomsubmit'])) {
     $username = $_SESSION['NAME'];
     $roomname = $_POST['r_name'];
     $datetime = $_POST['datetime'];
+    $latitude = $_COOKIE['get_latitude'];
+    $longitude = $_COOKIE['get_longitude'];
 
-    $sql = "insert into room (r_code,r_name,r_time,r_latitude,r_longitude,r_teacher) values('$roomcode','$roomname','$datetime','$lat','$lon','$username')";
+    $sql = "insert into room (r_code,r_name,r_time,r_latitude,r_longitude,r_teacher) values('$roomcode','$roomname','$datetime','$latitude','$longitude','$username')";
     mysqli_query($conn, $sql) or die (mysqli_error($conn));
     header('location:teacher-home.php');
 }
@@ -61,24 +62,12 @@ $_SESSION['r_code'] = $roomcode;
             <input class="fname" type="text" name="r_name" placeholder="ชื่อห้อง" />
             <input type="datetime-local" name="datetime" placeholder="วันที่/เวลา" />
           </div>
-          <button type="submit" name="roomsubmit" onclick="">Submit</button>
+          <button type="submit" name="roomsubmit" onclick="getLocation()">Submit</button>
         </form>
       </div>
     </div>
   </div>
-  <!--GPS -->
-  <script>
-    function getLocation(){
-        
-        if(navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(position =>{
-                $lat = position.coords.altitude
-                $lon = position.coords.longitude
-            });
-        }
-    }
 
-  </script>
       <!-- card2 -->
       <div class="card">
           <div class="face face1">

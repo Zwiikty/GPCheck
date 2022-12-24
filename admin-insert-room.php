@@ -11,6 +11,7 @@
 </form>
 
 <?php 
+require_once("geolocation.html");
  //code generate
  function room_code($chars) 
 {
@@ -26,18 +27,10 @@ if (isset($_POST['submit'])) {
 $username = $_SESSION['NAME'];
 $roomname = $_POST['r_name'];
 $datetime = $_POST['datetime'];
-$sql_insert_room = "insert into room (r_code,r_name,r_time,r_latitude,r_longitude,r_teacher) values('$roomcode','$roomname','$datetime','$lat','$lon','$username')";
+$latitude = $_COOKIE['get_latitude'];
+$longitude = $_COOKIE['get_longitude'];
+
+$sql_insert_room = "insert into room (r_code,r_name,r_time,r_latitude,r_longitude,r_teacher) values('$roomcode','$roomname','$datetime','$latitude','$longitude','$username')";
 mysqli_query($conn, $sql_insert_room) or die (mysqli_error($conn));
 }
 ?>
-  <!--GPS -->
-  <script>
-    function getLocation(){
-        
-        if(navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(position =>{
-                $lat = position.coords.altitude
-                $lon = position.coords.longitude
-            });
-        }
-    }

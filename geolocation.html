@@ -1,0 +1,15 @@
+<script>
+function getLocation(){
+    if(navigator.geolocation) {
+            navigator.geolocation.watchPosition(showPosition)
+    }
+  }
+  function showPosition(position) {
+    document.cookie = "get_latitude = " + get_latitude;
+    document.cookie = "get_longitude = " + get_longitude;
+  }
+</script>
+
+</body>
+</html>
+
