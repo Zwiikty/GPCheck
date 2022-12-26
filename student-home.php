@@ -1,6 +1,6 @@
 <?php 
  require_once("conn.php");
- require_once("geolocation.html");
+ require_once("geolocation-distance.php");
 
  if (isset($_GET['check'])) {
     $username = $_SESSION['NAME'];
@@ -46,10 +46,7 @@
           toggle.classList.remove('active');
           sidebar.classList.remove('active');
       }
-  }
-
-  
-  
+  }  
   toggle.onclick = function(){
       toggle.classList.toggle('active');
       sidebar.classList.toggle('active');
@@ -58,6 +55,8 @@
 
 <!-- Display-->
 <?php
+$lat1 = $_COOKIE['get_latitude'];
+$lon1 = $_COOKIE['get_longitude'];
 $currentDate = new DateTime();
 $currentDate->setTimezone(new DateTimeZone('Asia/Bangkok')); 
 $sql = "select * from room";
@@ -69,11 +68,23 @@ $result = mysqli_query($conn, $sql) or die (mysqli_error($conn));
     <section class="card กลุ่ม1">
 <h3><?php echo $row['r_name'] ?></h3>
     <span>อาจารย์ <?php echo $row['r_teacher'] ?></span>
+    <span>ระยะห่าง : <?php echo $distance =  getDistanceBetweenPointsNew($lat1, $lon1, $row['r_latitude'], $row['r_longitude']); ?> กิโลเมตร</span>
     <a href="student-home.php?check=<?php echo $row['r_code'];?>&time=<?php echo $currentDate->format('Y/m/d H:i:s')?>">
-    <button type="submit" onclick="getLocation()">เช็คชื่อ</button></a>
+    <button type="submit">เช็คชื่อ</button></a>
 </section>
 </div>
   </main>
 <?php endwhile; ?>
+
+<!-- GPS -->
+<script>
+    if(navigator.geolocation) {
+            navigator.geolocation.watchPosition(showPosition)
+            document.cookie = "get_latitude = " + get_latitude;
+            document.cookie = "get_longitude = " + get_longitude;
+        }
+</script>
+
+
 </body>
 </html>
