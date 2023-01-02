@@ -1,12 +1,13 @@
 <?php 
  require_once("conn.php");
-#delete room
+
+#------delete room------
  if (isset($_GET['room_del'])) {
   $room_del = $_GET['room_del'];
   $sql2 = "delete from room where r_code = '$room_del'";
   $result2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
 }
-
+#------delete room------
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,9 +19,10 @@
     <link href="style-student-home.css" rel="stylesheet">
     <link href="style-home.css" rel="stylesheet">
     <link href="style-create-room.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="style-grid.css">
 </head>
 <body>
+<!-- side bar -->
 <div id="toggle"></div>
   <div id="sidebar">
       <ul>
@@ -31,7 +33,7 @@
           <li><a href="logout.php">Log out</a></li>
       </ul>
   </div>
- <!-- side bar -->
+
  <script>
   const toggle = document.getElementById('toggle');
   const sidebar = document.getElementById('sidebar');
@@ -44,15 +46,15 @@
       }
   }
 
-  
-  
   toggle.onclick = function(){
       toggle.classList.toggle('active');
       sidebar.classList.toggle('active');
   }
   </script>
+ <!-- side bar -->
 
 <!-- Display-->
+<div class="grid-container">
 <?php 
 $username = $_SESSION['NAME'];
 $sql = "select * from room where r_teacher = '$username'";
@@ -60,52 +62,23 @@ $result = mysqli_query($conn, $sql) or die (mysqli_error($conn));
 
     while ($row = mysqli_fetch_array($result)) :
 ?>
-  <main class="card">
-    <div class="row">
-    <section class="card กลุ่ม3">
-<h3><?php echo $row['r_name'] ?></h3>
-    <span>อาจารย์ <?php echo $row['r_teacher'] ?></span>
-    <a href="teacher-room-details.php?roomdetails=<?php echo $row['r_code'];?>">
-    <button class="button">รายละเอียด</button></a>
-    <a href="teacher-room-list.php?room_del=<?php echo $row['r_code'];?>">
-    <button type="submit">ลบห้อง</button></a>
-    </section>
-</div>
-  </main>
+  <div class="grid-item">
+    <main class="card">
+      <div class="row">
+      <section class="card กลุ่ม3">
+      <h3><?php echo $row['r_name'] ?></h3>
+      <span>อาจารย์ <?php echo $row['r_teacher'] ?></span>
+      <a href="teacher-room-details.php?roomdetails=<?php echo $row['r_code'];?>">
+      <button class="button">รายละเอียด</button></a>
+      <a href="teacher-room-list.php?room_del=<?php echo $row['r_code'];?>">
+      <button type="submit">ลบห้อง</button></a>
+      </section>
+      </div>
+    </main>
+  </div>
 <?php  endwhile; ?>
- 
-<!-- pop up list-->
-<?php 
-    if (isset($_GET['roomdetails'])) { 
-      $roomdetails = $_GET['roomdetails'];
-      $sql1 = "select user_name,user_latitude,user_longitude,user_time,user_checkstatus from user where user_r_code = '$roomdetails'";
-      $result1 = mysqli_query($conn, $sql1) or die(mysqli_error($conn));
-      while ($row1 = mysqli_fetch_array($result1)) :
-      endwhile; } ?>
-<!-- pop up -->
-<!-- pop up card -->
-<script>
-    let modalBtns = [...document.querySelectorAll(".button")];
-    modalBtns.forEach(function (btn) {
-      btn.onclick = function () {
-        let modal = btn.getAttribute("data-modal");
-        document.getElementById(modal).style.display = "block";
-      };
-    });
-    let closeBtns = [...document.querySelectorAll(".close")];
-    closeBtns.forEach(function (btn) {
-      btn.onclick = function () {
-        let modal = btn.closest(".modal");
-        modal.style.display = "none";
-      };
-    });
-    window.onclick = function (event) {
-      if (event.target.className === "modal") {
-        event.target.style.display = "none";
-      }
-    };
-  </script>
-
+</div>
+ <!-- Display-->
 
 </body>
 </html>
