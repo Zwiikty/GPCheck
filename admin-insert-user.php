@@ -1,4 +1,4 @@
-<form method="post">
+<!-- <form method="post">
     <div class="row">
         <div class="col-sm-6">
             <label for="username">username</label>
@@ -17,16 +17,25 @@
             <button type="submit" name="submit">submit</button>
         </div>
     </div>
+</form> -->
+<link rel="stylesheet" href="style-insert-user.css">
+<form class="form">
+    <h2>INSERT USER</h2>
+    <p type="Username:"><input placeholder="Write Username here.."></input></p>
+    <p type="Password:"><input placeholder="Write Password here.."></input></p>
+    <p type="Fullname:"><input placeholder="Write Fullname here.."></input></p>
+    <button>Confirm</button>
 </form>
 
-<?php 
+
+<?php
 if (isset($_POST['submit'])) {
- $username = $_POST['username'];
- $password = $_POST['password'];
- $fullname = $_POST['fullname'];
- $status = $_POST['status'];
-$sql_insert = "insert into user (user_username, user_password, user_name, user_status) 
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $fullname = $_POST['fullname'];
+    $status = $_POST['status'];
+    $sql_insert = "insert into user (user_username, user_password, user_name, user_status) 
 values ('$username', '$password', '$fullname', '$status')";
-mysqli_query($conn, $sql_insert) or die (mysqli_error($conn));
+    mysqli_query($conn, $sql_insert) or die(mysqli_error($conn));
 }
 ?>
