@@ -1,14 +1,13 @@
-<form method="post">
-    <div class="row">
-        <div class="col-sm-6">
-            <label>ชื่อห้อง</label>
-            <input type="text" name="r_name" class="form-control">
-            <label>วันที่/เวลา</label>
-            <input type="datetime-local" name="datetime" class="form-control">
-            <button type="submit" name="submit">submit</button>
-        </div>
-    </div>
+<link rel="stylesheet" href="css/style-insert-user.css">
+<form class="form">
+    <h2>INSERT ROOM</h2>
+    <label>ชื่อห้อง</label>
+    <input type="text" name="r_name" class="form-control">
+    <label>วันที่/เวลา</label>
+    <input type="datetime-local" name="datetime" class="form-control">
+    <button type="submit" name="submit">submit</button>
 </form>
+
 
 <?php 
 require_once("geolocation.html");

@@ -18,12 +18,18 @@
         </div>
     </div>
 </form> -->
-<link rel="stylesheet" href="style-insert-user.css">
+<link rel="stylesheet" href="css/style-insert-user.css">
 <form class="form">
     <h2>INSERT USER</h2>
     <p type="Username:"><input placeholder="Write Username here.."></input></p>
     <p type="Password:"><input placeholder="Write Password here.."></input></p>
     <p type="Fullname:"><input placeholder="Write Fullname here.."></input></p>
+    <select class="custom-select mr-sm-2" name="status">
+                <option selected>Choose...</option>
+                <option value="0">admin</option>
+                <option value="1">student</option>
+                <option value="2">teacher</option>
+            </select>
     <button>Confirm</button>
 </form>
 
