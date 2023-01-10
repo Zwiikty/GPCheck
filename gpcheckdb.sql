@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 02, 2023 at 01:45 PM
+-- Generation Time: Jan 10, 2023 at 02:54 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -48,7 +48,8 @@ INSERT INTO `room` (`r_id`, `r_code`, `r_name`, `r_time`, `r_latitude`, `r_longi
 (44, 'pBLCun', 'Hali Iceland', '2022-12-26 19:54:00', 64.129811, -16.017196, 'Teacher1'),
 (45, 'VnmObx', 'ข้างบ้าน', '2022-12-26 19:54:00', 18.249292, 99.488585, 'Teacher1'),
 (46, 'tUB5DX', '02/01/66', '2023-01-02 18:49:00', 18.8160541, 98.9848536, 'Teacher1'),
-(47, '35lso2', 'DDDDDD', '2023-01-02 18:49:00', 18.8160541, 98.9848536, 'Teacher1');
+(47, '35lso2', 'DDDDDD', '2023-01-02 18:49:00', 18.8160541, 98.9848536, 'Teacher1'),
+(48, '7UHTaL', '45646sadsa', '2023-01-10 20:45:00', 18.8160541, 98.9848536, 'Admin ');
 
 -- --------------------------------------------------------
 
@@ -79,7 +80,8 @@ INSERT INTO `user` (`user_id`, `user_username`, `user_password`, `user_name`, `u
 (4, 'teacher', 'teacher123', 'Teacher1', 2, '', 0, 0, '2022-12-08 07:21:39', 0),
 (13, 'student1', 'student123', 'student', 1, 'bWXPBt', 18.81605339050293, 98.98485565185547, '2022-12-26 18:32:48', 1),
 (14, 'teacher1', 'teacher123', 'teacher2', 2, '', 0, 0, '0000-00-00 00:00:00', 0),
-(16, 'test66', 'test666', 'test6666', 2, '', 0, 0, '0000-00-00 00:00:00', 0);
+(16, 'test66', 'test666', 'test6666', 2, '', 0, 0, '0000-00-00 00:00:00', 0),
+(20, 'pj', '12345', 'pj', 1, '', 0, 0, '0000-00-00 00:00:00', 0);
 
 --
 -- Indexes for dumped tables
@@ -105,13 +107,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
