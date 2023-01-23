@@ -32,8 +32,8 @@ $roomcode = $f_roomcode;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>. : Teacher Control : .</title>
-    <link href="style-home-index.css" rel="stylesheet">
-    <link href="style-create-room.css" rel="stylesheet">
+    <link href="style/style-home-index.css" rel="stylesheet">
+    <link href="style/style-create-room.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">

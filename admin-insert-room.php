@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="style-insert-user.css">
+<link rel="stylesheet" href="style/style-insert-user.css">
 <form class="form" method="post">
     <h2>INSERT ROOM</h2>
     <label>ชื่อห้อง</label>

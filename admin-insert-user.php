@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="style-insert-user.css">
+<link rel="stylesheet" href="style/style-insert-user.css">
 <form class="form" method="post">
     <h2>INSERT USER</h2>
     <p type="Username:"><input name="username" placeholder="Write Username here.."></input></p>

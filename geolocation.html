@@ -5,8 +5,8 @@ function getLocation(){
     }
   }
   function showPosition(position) {
-    document.cookie = "get_latitude = " + get_latitude;
-    document.cookie = "get_longitude = " + get_longitude;
+    document.cookie = "get_latitude = " + position.coords.latitude;
+    document.cookie = "get_longitude = " + position.coords.longitude;
   }
 </script>
 

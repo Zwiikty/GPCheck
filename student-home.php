@@ -1,6 +1,7 @@
 <?php 
  require_once("conn.php");
  require_once("function.php");
+ require_once("geolocation.html");
  require_once("geolocation-distance.php");
 
 //-------button---------
@@ -30,9 +31,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>. : Student Control : .</title>
-    <link href="style-student-home.css" rel="stylesheet">
-    <link href="style-home.css" rel="stylesheet">
-    <link rel="stylesheet" href="style-grid.css">
+    <link href="style/style-student-home.css" rel="stylesheet">
+    <link href="style/style-home.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/style-grid.css">
     
 </head>
 <body>
@@ -86,6 +87,7 @@ $result = mysqli_query($conn, $sql) or die (mysqli_error($conn));
         <span>ระยะห่าง : <?php echo $distance_room =  getDistanceBetweenPointsNew($lat1, $lon1, $row['r_latitude'], $row['r_longitude']); ?> กิโลเมตร</span>
         <a href="student-home.php?check=<?php echo $row['r_code'];?>&time=<?php echo $currentDate->format('Y/m/d H:i:s');?>&between_distance=<?php echo $distance_room;?>">
         <button type="submit">เช็คชื่อ</button></a>
+        <button type="submit" onclick="getLocation()">reset</button>
         </section>
         </div>
         </main>
@@ -95,13 +97,7 @@ $result = mysqli_query($conn, $sql) or die (mysqli_error($conn));
 <!-- Display-->
 
 <!-- GPS -->
-<script>
-    if(navigator.geolocation) {
-            navigator.geolocation.watchPosition(showPosition)
-            document.cookie = "get_latitude = " + get_latitude;
-            document.cookie = "get_longitude = " + get_longitude;
-        }
-</script>
+
 <!-- GPS -->
 
 </body>

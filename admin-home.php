@@ -9,7 +9,7 @@ require_once('conn.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>. : Admin Control : .</title>
-    <link rel="stylesheet" href="style-admin-home.css"> 
+    <link rel="stylesheet" href="style/style-admin-home.css"> 
 </head>
 
 <body>
@@ -33,7 +33,7 @@ require_once('conn.php');
                 <li>
                     <a href="">
                         <span class="icon"><i class="fas fa-home"></i></span>
-                        <span contenteditable="false" style="color: grey; font-weight: bold; class=" placeholder ui-draggable" unselectable="ON">
+                        <span contenteditable="false" style="color: grey; font-weight: bold; class=" placeholder ui-draggable unselectable="ON">
                             จัดการข้อมูล</span>
                     </a>
                 </li>
@@ -52,7 +52,7 @@ require_once('conn.php');
                 <li>
                     <a href="#">
                         <span class="icon"><i class="fas fa-home"></i></span>
-                        <span contenteditable="false" style="color: grey; font-weight: bold; class=" placeholder ui-draggable" unselectable="ON" >
+                        <span contenteditable="false" style="color: grey; font-weight: bold; class=" placeholder ui-draggable unselectable="ON" >
                             จัดการห้องเรียน</span>
                     </a>
                 </li>

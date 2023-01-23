@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>. : Login : .</title>
-	<link rel="stylesheet" href="style-login.css">
+	<link rel="stylesheet" href="style/style-login.css">
 </head>
 <body>
 	<div class="box">
@@ -24,7 +24,7 @@
 			</div>
 			<div class="links">
 				<a href="#">Forgot Password ?</a>
-				<a href="#">Sign up</a>
+				<a href="register.php">Sign up</a>
 			</div>
 			<input type="submit" value="login" name="login">
 		</form>
