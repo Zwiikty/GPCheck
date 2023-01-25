@@ -31,8 +31,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>. : Student Control : .</title>
-    <link href="style/style-student-home.css" rel="stylesheet">
-    <link href="style/style-home.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/style-student-home.css">
+    <link rel="stylesheet" href="style/style-home.css">
     <link rel="stylesheet" href="style/style-grid.css">
     
 </head>
