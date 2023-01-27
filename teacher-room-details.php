@@ -65,7 +65,7 @@
             <td><?php echo $row['user_username']?></td>
             <td><?php echo $row['user_name']?></td>
             <td><?php 
-            echo $distance = getDistanceBetweenPointsNew($row['user_latitude'], $row['user_longitude'], $row['r_latitude'], $row['r_longitude'])*1000;?>
+            echo $distance = number_format(getDistanceBetweenPointsNew($row['user_latitude'], $row['user_longitude'], $row['r_latitude'], $row['r_longitude'])*1000);?>
              เมตร</td>
             <td><?php echo $row['user_time']?></td>
         </tr>
