@@ -23,15 +23,15 @@ $roomcode = $f_roomcode;
 <body>
 <form class="form" method="post">
     <h2>INSERT ROOM</h2>
-    <label>ชื่อห้อง</label>
-    <input type="text" name="r_name" class="form-control">
-    <label>วันที่/เวลา</label>
-    <input type="datetime-local" name="datetime" class="form-control">
-    <label>ละติจูด</label>
-    <input type="text" name="latitude" class="form-control">
-    <label>ลองติจูด</label>
-    <input type="text" name="longitude" class="form-control">
-    <label >อาจารย์ที่สร้าง</label>
+    <label>Room name:</label>
+    <input type="text" name="r_name" class="form-control" placeholder="Write Roomname here..">
+    <label>Date/Time:</label>
+    <input type="datetime-local" name="datetime" class="form-control" placeholder="Write Date/Time here..">
+    <label>Latitude:</label>
+    <input type="text" name="latitude" class="form-control" placeholder="Write latitude here..">
+    <label>Longitude:</label>
+    <input type="text" name="longitude" class="form-control" placeholder="Write longitude here..">
+    <label >Teacher:</label>
 	<select name="user_create">
        <?php 
         $sql_user_create = "select * from user where user_status = 2";

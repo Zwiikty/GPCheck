@@ -1,123 +1,24 @@
 *
-{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
-}
 
-body
-{
-	background: #001a25;
-}
-/*table, th, td {
+ td, th {
   border: 1px solid black;
   border-collapse: collapse;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-} */
-
-
-
-
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding: 10px;
+  padding: 9px;
   border-bottom: 1px solid black;
   background-color: white;
 }
 
-tr:hover {background-color: #D6EEEE;}
 
+table {
+    table-layout: fixed;
+	border-collapse: collapse;
+    width: 50%;
+	margin: 0 auto;
+	font-family: 'Arial', sans-serif;
+}
 
-
-#toggle
-{
-	position: fixed;
-	top: 20px;
-	left: 60px;
-	width: 60px;
-	height: 60px;
-	background: #03a9f4;
-	cursor: pointer;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-#toggle::before
-{
-	content: '';
-	position: absolute;
-	width: 28px;
-	height: 2px;
-	background: #fff;
-	transform: translateY(-5px);
-	transition: 0.2s;
-}
-#toggle::after
-{
-	content: '';
-	position: absolute;
-	width: 28px;
-	height: 2px;
-	background: #fff;
-	transform: translateY(5px);
-	transition: 0.2s;
-}
-#toggle.active::before
-{
-	transform: translateY(0px); rotate: (45deg);
-}
-#toggle.active::after
-{
-	transform: translateY(0px); rotate: (-45deg);
-}
-#sidebar
-{
-	position: fixed;
-	top: 0;
-	left: -300px;
-	width: 300px;
-	height: 100vh;
-	background: #003147;
-	transition: 0.5s;
-}
-#sidebar.active
-{
-	left: 0px;
-}
-#sidebar ul
-{
-	position: relative;
-	margin-top: 50px;
-}
-#sidebar ul li
-{
-	list-style: none;
-	display: inline-block;
-	width: 100%;
-	padding: 10px 40px;
-}
-#sidebar ul li:hover
-{
-	background: #03a9f4;
-}
-#sidebar ul li a
-{
-	background: none;
-	text-decoration: none;
-	font-size: 1.5em;
-	color: #45f3ff;
-	letter-spacing: 2px;
+td {
+    overflow: visible;
+    word-wrap: break-word;
+    width: 20%;
 }

@@ -13,13 +13,13 @@
     <p type="Username:"><input name="username" placeholder="Write Username here.."></input></p>
     <p type="Password:"><input name="password" placeholder="Write Password here.."></input></p>
     <p type="Fullname:"><input name="full_name" placeholder="Write Fullname here.."></input></p>
-    <select class="custom-select mr-sm-2" name="status">
+    <p type="Status:"><select class="custom-select mr-sm-2" name="status">
                 <option selected>Choose...</option>
                 <option value="0">admin</option>
                 <option value="1">student</option>
                 <option value="2">teacher</option>
             </select>
-    <button name="submit">Confirm</button>
+    <button name="submit">Submit</button>
 </form>
 </body>
 </html>

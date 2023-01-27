@@ -13,25 +13,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>. : Admin Control : .</title>
+    <link rel="stylesheet" href="style/style-insert-user.css">
 </head>
 <body>
-<form method="post">
-    <div class="row">
-        <div class="col-sm-6">
+<form class="form" method="post">
+  <h2>Edit User</h2>
             <input type="hidden" name="id" value="<?php echo $row['user_id'];?>">
-            <label for="username">username</label>
-            <input type="text" name="username" class="form-control" value="<?php echo $row['user_username'];?>">
-            <label for="password">password</label>
-            <input type="text" name="password" class="form-control" value="<?php echo $row['user_password'];?>">
-            <label for="username">fullname</label>
-            <input type="text" name="fullname" class="form-control" value="<?php echo $row['user_name'];?>">
-            <label for="password">status</label>
-            <select class="custom-select mr-sm-2" name="status">
+            <p type="Username:"><input name="username" value="<?php echo $row['user_username'];?>">
+            <p type="Password:"><input name="password"  value="<?php echo $row['user_password'];?>">
+            <p type="Fullname:"><input name="fullname" value="<?php echo $row['user_name'];?>">
+            <p type="Status:"><select class="custom-select mr-sm-2" name="status">
                 <option selected>Choose..</option>
                 <option value="0">admin</option>
                 <option value="1">student</option>
                 <option value="2">teacher</option>
-            </select><br><br>
+            </select>
             <button type="bottom" name="update">submit</button>
         </div>
     </div>
