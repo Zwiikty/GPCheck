@@ -17,7 +17,7 @@ if (isset($_POST['login'])) {
             $_SESSION['ID'] = $row['user_id'];
             $_SESSION['NAME'] = $row['user_name'];
             if ($row['user_status'] == 0){
-                header('location:admin/admin-home.php');
+                header('location:admin-home.php');
             } elseif ($row['user_status'] == 1) {
                 header('location:student-home.php');
             } elseif ($row['user_status'] == 2) {

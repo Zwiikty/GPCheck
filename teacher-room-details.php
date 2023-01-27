@@ -1,12 +1,15 @@
-<?php require_once("conn.php"); ?>
+<?php 
+    require_once("conn.php"); 
+    require_once("geolocation-distance.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style-table.css">
-    <link rel="stylesheet" href="style/style-home.css">
+    <link rel="stylesheet" href="style-table.css">
+    <link rel="stylesheet" href="style-home.css">
     <title>. : Teacher Control : .</title>
 </head>
 <body>
@@ -52,14 +55,18 @@
 <!-- function -->
 <?php  if (isset($_GET['roomdetails'])) {
         $roomdetails = $_GET['roomdetails'];
-        $sql_room_detail = "select user_username,user_name,user_latitude,user_longitude,user_time,user_checkstatus from user where user_r_code = '$roomdetails'";
+        $sql_room_detail = "SELECT user.user_username,user.user_name,user.user_latitude,user.user_longitude,user.user_time,room.r_latitude,room.r_longitude
+        from user inner join room on user.user_r_code = room.r_code
+        where user.user_r_code = '$roomdetails'";
         $result = mysqli_query($conn, $sql_room_detail) or die(mysqli_error($conn));
         while ($row = mysqli_fetch_array($result)) :
 ?>
         <tr>
             <td><?php echo $row['user_username']?></td>
             <td><?php echo $row['user_name']?></td>
-            <td><?php echo $row['user_username']?></td>
+            <td><?php 
+            echo $distance = getDistanceBetweenPointsNew($row['user_latitude'], $row['user_longitude'], $row['r_latitude'], $row['r_longitude'])*1000;?>
+             เมตร</td>
             <td><?php echo $row['user_time']?></td>
         </tr>
 <?php endwhile; 

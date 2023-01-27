@@ -38,7 +38,7 @@ require_once('conn.php');
                     </a>
                 </li>
                 <li>
-                    <a href="?page=insert_user">
+                    <a href="admin-insert-user.php" target="_blank">
                         <span class="icon"><i class="fas fa-home"></i></span>
                         <span class="item">Insert user</span>
                     </a>
@@ -57,7 +57,7 @@ require_once('conn.php');
                     </a>
                 </li>
                 <li>
-                    <a href="?page=insert_room">
+                    <a href="admin-insert-room.php" target="_blank">
                         <span class="icon"><i class="fas fa-home"></i></span>
                         <span class="item">Insert room</span>
                     </a>
@@ -115,7 +115,7 @@ switch ($_GET['page']):
         require_once('admin-edit-user.php');
         break;
     case "insert_room":
-        require_once('admin-insert-room.php');
+        include('admin-insert-room.php');
         break;
     case "del_room":
         require_once('admin-del-room.php');
