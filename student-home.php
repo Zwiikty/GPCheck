@@ -84,7 +84,7 @@ $result = mysqli_query($conn, $sql) or die (mysqli_error($conn));
         <section class="card กลุ่ม1">
         <h3><?php echo $row['r_name'] ?></h3>
         <span>อาจารย์ <?php echo $row['r_teacher'] ?></span>
-        <span>ระยะห่าง : <?php echo $distance_room =  getDistanceBetweenPointsNew($lat1, $lon1, $row['r_latitude'], $row['r_longitude'])*1000; ?> เมตร</span>
+        <span>ระยะห่าง : <?php echo $distance_room =  number_format(getDistanceBetweenPointsNew($lat1, $lon1, $row['r_latitude'], $row['r_longitude'])*1000); ?> เมตร</span>
         <a href="student-home.php?check=<?php echo $row['r_code'];?>&time=<?php echo $currentDate->format('Y/m/d H:i:s');?>&between_distance=<?php echo $distance_room;?>">
         <button type="submit">เช็คชื่อ</button></a>
         <button type="submit" onclick="getLocation()">reset</button>
