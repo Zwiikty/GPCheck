@@ -8,8 +8,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style-table.css">
-    <link rel="stylesheet" href="style-home.css">
+    <link rel="stylesheet" href="style/style-table.css">
+    <link rel="stylesheet" href="style/style-home.css">
     <title>. : Teacher Control : .</title>
 </head>
 <body>
