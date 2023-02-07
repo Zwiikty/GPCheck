@@ -57,6 +57,6 @@ if (isset($_POST['update'])) {
   	$update_teacher = $_POST['user_create'];
     $sql_update_room = "UPDATE room set r_name = '$update_roomname', r_time = '$update_datetime', r_latitude = '$update_latitude', r_longitude = '$update_longitude', r_teacher = '$update_teacher' where r_id = '$update_id'";
     mysqli_query($conn, $sql_update_room) or die(mysqli_error($conn));
-    header('location:admin-home.php?page=del_room');
+    header('location:admin-home?page=del_room');
 }
 ?>

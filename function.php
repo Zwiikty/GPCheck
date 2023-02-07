@@ -17,11 +17,11 @@ if (isset($_POST['login'])) {
             $_SESSION['ID'] = $row['user_id'];
             $_SESSION['NAME'] = $row['user_name'];
             if ($row['user_status'] == 0){
-                header('location:admin-home.php');
+                header('location:admin-home');
             } elseif ($row['user_status'] == 1) {
-                header('location:student-home.php');
+                header('location:student-home');
             } elseif ($row['user_status'] == 2) {
-                header('location:teacher-home.php');
+                header('location:teacher-home');
             }
         }else {
             f_alert("ชื่อผู้ใช้/รหัสผิดพลาด");

@@ -26,11 +26,11 @@
 <div id="toggle"></div>
   <div id="sidebar">
       <ul>
-          <li><a href="teacher-home.php">Home</a></li>
+          <li><a href="teacher-home">Home</a></li>
           <li><a href="#">Menu</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a href="logout.php">Log out</a></li>
+          <li><a href="logout">Log out</a></li>
       </ul>
   </div>
 
@@ -68,9 +68,9 @@ $result = mysqli_query($conn, $sql) or die (mysqli_error($conn));
       <section class="card กลุ่ม3">
       <h3><?php echo $row['r_name'] ?></h3>
       <span>อาจารย์ <?php echo $row['r_teacher'] ?></span>
-      <a href="teacher-room-details.php?roomdetails=<?php echo $row['r_code'];?>">
+      <a href="teacher-room-details?roomdetails=<?php echo $row['r_code'];?>">
       <button class="button">รายละเอียด</button></a>
-      <a href="teacher-room-list.php?room_del=<?php echo $row['r_code'];?>">
+      <a href="teacher-room-list?room_del=<?php echo $row['r_code'];?>">
       <button type="submit">ลบห้อง</button></a>
       </section>
       </div>

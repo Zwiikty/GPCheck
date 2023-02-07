@@ -17,11 +17,11 @@
      <div id="toggle"></div>
   <div id="sidebar">
       <ul>
-          <li><a href="teacher-home.php">Home</a></li>
+          <li><a href="teacher-home">Home</a></li>
           <li><a href="#">Menu</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a href="logout.php">Log out</a></li>
+          <li><a href="logout">Log out</a></li>
       </ul>
   </div>
 

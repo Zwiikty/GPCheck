@@ -38,7 +38,7 @@ require_once('conn.php');
                     </a>
                 </li>
                 <li>
-                    <a href="admin-insert-user.php" target="_blank">
+                    <a href="admin-insert-user" target="_blank">
                         <span class="icon"><i class="fas fa-home"></i></span>
                         <span class="item">Insert user</span>
                     </a>
@@ -57,7 +57,7 @@ require_once('conn.php');
                     </a>
                 </li>
                 <li>
-                    <a href="admin-insert-room.php" target="_blank">
+                    <a href="admin-insert-room" target="_blank">
                         <span class="icon"><i class="fas fa-home"></i></span>
                         <span class="item">Insert room</span>
                     </a>
@@ -69,7 +69,7 @@ require_once('conn.php');
                     </a>
                 </li>
                 <li>
-                    <a href="logout.php">
+                    <a href="logout">
                         <span class="icon"><i class="fas fa-home"></i></span>
                         <span class="item">Log out</span>
                     </a>
@@ -103,27 +103,27 @@ if (isset($_GET['page'])) {
 }
 switch ($_GET['page']):
     case "home":
-        require_once('admin-home.php');
+        require_once('admin-home');
         break;
     case "insert_user":
-        require_once('admin-insert-user.php');
+        require_once('admin-insert-user');
         break;
     case "del_user":
-        require_once('admin-del-user.php');
+        require_once('admin-del-user');
         break;
     case "edit_user":
-        require_once('admin-edit-user.php');
+        require_once('admin-edit-user');
         break;
     case "insert_room":
-        include('admin-insert-room.php');
+        include('admin-insert-room');
         break;
     case "del_room":
-        require_once('admin-del-room.php');
+        require_once('admin-del-room');
         break;
     case "edit_room":
-        require_once('admin-edit-room.php');
+        require_once('admin-edit-room');
         break;
     default:
-        require_once('admin-home.php');
+        require_once('admin-home');
 endswitch;
 ?>

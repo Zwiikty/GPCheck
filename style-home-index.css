@@ -13,7 +13,7 @@ body{
   width: 1000px;
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .container .card{
@@ -98,3 +98,17 @@ body{
   background: #333;
   color: #fff;
 }
+
+/* Styles for small screens */
+@media only screen and (max-width: 480px){
+  .container {
+    display: grid;
+ }
+ .card{
+    grid-template-columns: repeat(1, 1fr);
+     grid-template-rows: repeat(auto-fit,minmax(150rem));
+     justify-items: center;
+ }
+  }
+
+

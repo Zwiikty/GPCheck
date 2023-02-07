@@ -21,7 +21,7 @@ $roomcode = $f_roomcode;
 
     $sql = "insert into room (r_code,r_name,r_time,r_latitude,r_longitude,r_teacher) values('$roomcode','$roomname','$datetime','$latitude','$longitude','$username')";
     mysqli_query($conn, $sql) or die (mysqli_error($conn));
-    header('location:teacher-home.php');
+    header('location:teacher-home');
 }
 ?>
 
@@ -79,7 +79,7 @@ $roomcode = $f_roomcode;
           <div class="face face2">
               <div class="content">
               <p>
-                <a href="teacher-room-list.php">
+                <a href="teacher-room-list">
     <button class="button" data-modal="modalTwo" >Click here !</button></a>
   </p>
               </div>

@@ -3,7 +3,7 @@
     $del_room = $_GET['del'];
     $sql1_del_room = "DELETE FROM room WHERE r_id = '$del_room' ";
     mysqli_query($conn, $sql1_del_room) or die(mysqli_error($conn));
-    header('location:admin-home.php?page=del_room');
+    header('location:admin-home?page=del_room');
     }
  $sql_del_room = "SELECT * from room";
  $result = mysqli_query($conn, $sql_del_room) or die(mysqli_error($conn));
@@ -38,11 +38,11 @@
                 <td><?php echo $row['r_longitude']?></td>
                 <td><?php echo $row['r_teacher']?></td>
                 <td>
-                    <a href="admin-home.php?page=edit_room&edit=<?php echo $row['r_id']?>">
+                    <a href="admin-home?page=edit_room&edit=<?php echo $row['r_id']?>">
                     <button type="submit">edit</button></a>
                 </td>
                 <td>
-                    <a href="admin-home.php?page=del_room&del=<?php echo $row['r_id']?>">
+                    <a href="admin-home?page=del_room&del=<?php echo $row['r_id']?>">
                     <button type="submit">delete</button></a>
                 </td>
             </tr>

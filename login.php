@@ -23,8 +23,7 @@
 				<i></i>
 			</div>
 			<div class="links">
-				<a href="#">Forgot Password ?</a>
-				<a href="register.php">Sign up</a>
+				<a href="register">Sign up</a>
 			</div>
 			<input type="submit" value="login" name="login">
 		</form>

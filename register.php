@@ -8,7 +8,7 @@
 	values ('$username', '$password', '$fullname', '1')";
     mysqli_query($conn, $sql_register) or die(mysqli_error($conn));
     f_alert("ลงทะเบียนเรียบร้อย");
-    header("Refresh:0, url=login.php");
+    header("Refresh:0, url=login");
     }
 ?>
 <!DOCTYPE html>

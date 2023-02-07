@@ -3,7 +3,7 @@
     $del_user = $_GET['del'];
     $sql1_del_user = "DELETE FROM user WHERE user_id = '$del_user' ";
     mysqli_query($conn, $sql1_del_user) or die(mysqli_error($conn));
-    header('location:admin-home.php?page=del_user');
+    header('location:admin-home?page=del_user');
     }
  $sql_del_user = "SELECT * from user";
  $result = mysqli_query($conn, $sql_del_user) or die(mysqli_error($conn));
@@ -44,11 +44,11 @@
                 <td><?php echo $row['user_time']?></td>
                 <td><?php echo $row['user_checkstatus']?></td>
                 <td>
-                    <a href="admin-home.php?page=edit_user&edit=<?php echo $row['user_id']?>">
+                    <a href="admin-home?page=edit_user&edit=<?php echo $row['user_id']?>">
                     <button type="submit">edit</button></a>
                 </td>
                 <td>
-                    <a href="admin-home.php?page=del_user&del=<?php echo $row['user_id']?>">
+                    <a href="admin-home?page=del_user&del=<?php echo $row['user_id']?>">
                     <button type="submit">delete</button></a>
                 </td>
             </tr>
