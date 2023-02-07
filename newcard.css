@@ -1,0 +1,116 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+html {
+  min-height: 100%;
+}
+body {
+  font-size: 14px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  margin: 20px;
+  height: 2000px;
+  background: linear-gradient(to left top, #f5a1d5 0%, #cdd3e9 100%);
+}
+h1, h2, h3, h4, h5, h6, p {
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+header.hero {
+  background: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 4px solid rgba(255, 255, 255, 0.6);
+  margin: 0 0 20px;
+}
+header.hero h1 {
+  font-size: 3em;
+  color: #555;
+  margin: 0 0 5px;
+}
+hr {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 0 0 20px;
+}
+
+ul.card-stacks {
+  width: 660px;
+  list-style-type: none;
+  margin: 0 auto 20px;
+  padding: 0;
+  position: relative;
+  cursor: pointer;
+  height: 700px;
+}
+ul.card-stacks li.title {
+  margin: 0 0 20px;
+}
+ul.card-stacks li.title h2 {
+  font-weight: 700;
+}
+ul.card-stacks li.stack {
+  position: absolute;
+  left: 0px;
+  transition: all 0.4s cubic-bezier(0.63, 0.15, 0.03, 1.02);
+}
+ul.card-stacks li.stack ul.cards-down {
+  position: relative;
+  margin: 0 0 20px;
+  padding: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul.card-stacks li.stack ul.cards-down li.card {
+  transition: all 0.4s cubic-bezier(0.63, 0.15, 0.03, 1.22);
+  left: 0px;
+  transition-delay: 0.4s;
+  background: #fff;
+  overflow: hidden;
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+  position: absolute;
+  top: 0px;
+  box-shadow: 1px 2px 2px 0 #aaa;
+}
+ul.card-stacks li.stack ul.cards-down li.card img {
+  max-width: 100%;
+  height: auto;
+}
+ul.card-stacks li.stack ul.cards-down li.card div.content {
+  padding: 5px 10px;
+}
+ul.card-stacks li.stack ul.cards-down li.card.card-1 {
+  z-index: 10;
+  transform: rotateZ(-2deg);
+}
+ul.card-stacks li.stack ul.cards-down li.card.card-2 {
+  z-index: 9;
+  transform: rotateZ(-7deg);
+}
+ul.card-stacks li.stack ul.cards-down li.card.card-3 {
+  z-index: 8;
+  transform: rotateZ(5deg);
+}
+ul.card-stacks.transition li.stack.stack-1 {
+  left: 0px;
+}
+ul.card-stacks.transition li.stack.stack-2 {
+  left: 220px;
+}
+ul.card-stacks.transition li.stack.stack-3 {
+  left: 440px;
+}
+ul.card-stacks.transition li.stack ul.cards-down li.card {
+  transform: rotateZ(0deg);
+}
+ul.card-stacks.transition li.stack ul.cards-down li.card.card-1 {
+  top: 440px;
+}
+ul.card-stacks.transition li.stack ul.cards-down li.card.card-2 {
+  top: 220px;
+}
+
