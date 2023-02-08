@@ -6,7 +6,7 @@
 
 //-------button---------
  if (isset($_GET['check'])) {
-    if (($_GET['between_distance']) <= 0.05) {
+    if (($_GET['between_distance']) <= 50) {
     $username = $_SESSION['NAME'];
     $r_code = $_GET['check'];
     $getdate = $_GET['time'];
